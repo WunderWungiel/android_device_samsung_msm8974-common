@@ -105,3 +105,6 @@
 
 # sysfs - usb
 /sys/devices/virtual/host_notify/usb_otg(/.*)?               u:object_r:sysfs_usb_otg:s0
+
+# audio
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.hlte    u:object_r:hal_audio_default_exec:s0
