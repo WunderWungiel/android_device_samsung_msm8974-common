@@ -6,9 +6,12 @@
 // rild built against the Samsung libril and RIL headers. rild.c and rild.rc
 // are unmodified copies from hardware/ril/rild. The stock "rild" module is
 // disabled when the board sets ENABLE_VENDOR_RIL_SERVICE := true (klte-common).
+// base_vendor.mk also installs the AOSP reference RIL (libreference-ril),
+// which links the stock libril; the Samsung RIL stack replaces it.
 cc_binary {
     name: "rild_samsung",
     stem: "rild",
+    overrides: ["libreference-ril"],
     srcs: ["rild.c"],
     shared_libs: [
         "libcutils",
