@@ -2689,7 +2689,7 @@ int loc_eng_agps_install_certificates(loc_eng_data_s_type &loc_eng_data,
         {
             if (certificates[i].length > AGPS_CERTIFICATE_MAX_LENGTH) {
                 LOC_LOGE("cert#(%u) length of %u is too big! greater than %u",
-                        certificates[i].length, AGPS_CERTIFICATE_MAX_LENGTH);
+                        i, certificates[i].length, AGPS_CERTIFICATE_MAX_LENGTH);
                 ret_val = AGPS_CERTIFICATE_ERROR_GENERIC;
                 break;
             }
