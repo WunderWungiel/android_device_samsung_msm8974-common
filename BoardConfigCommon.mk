@@ -104,6 +104,8 @@ TARGET_SYSTEM_PROP += device/samsung/msm8974-common/system.prop
 
 # Recovery
 TARGET_RECOVERY_DEVICE_DIRS += device/samsung/msm8974-common
+# qcom-common sets it quoted ("RGBX_8888"); the quotes end up in soong JSON.
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true

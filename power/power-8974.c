@@ -168,10 +168,10 @@ static int resources_launch[] = {
 };
 // clang-format on
 
-const int kDefaultInteractiveDuration = 500; /* ms */
-const int kMinFlingDuration = 1500;          /* ms */
-const int kMaxInteractiveDuration = 5000;    /* ms */
-const int kMaxLaunchDuration = 5000;         /* ms */
+static const int kDefaultInteractiveDuration = 500; /* ms */
+static const int kMinFlingDuration = 1500;          /* ms */
+static const int kMaxInteractiveDuration = 5000;    /* ms */
+static const int kMaxLaunchDuration = 5000;         /* ms */
 
 static void process_interaction_hint(void* data) {
     static struct timespec s_previous_boost_timespec;
