@@ -18,6 +18,13 @@ DEVICE_PACKAGE_OVERLAYS += \
     device/samsung/msm8974-common/overlay \
     device/samsung/msm8974-common/overlay-lineage
 
+# APEX
+# The 3.4 kernel's dm-verity cannot parse the optional args apexd uses,
+# so ship uncompressed APEXes: pre-installed ones on /system skip dm-verity.
+# updatable_apex.mk sets PRODUCT_COMPRESSED_APEX := true and wins over
+# inheriting makefiles; product_config.mk applies this override afterwards.
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
