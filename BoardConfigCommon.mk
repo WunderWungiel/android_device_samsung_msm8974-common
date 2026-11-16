@@ -85,6 +85,7 @@ TARGET_FS_CONFIG_GEN := device/samsung/msm8974-common/config.fs
 # HIDL
 DEVICE_MANIFEST_FILE := device/samsung/msm8974-common/manifest.xml
 DEVICE_MATRIX_FILE := device/samsung/msm8974-common/compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
 
 # Legacy memfd
 TARGET_HAS_MEMFD_BACKPORT := true
