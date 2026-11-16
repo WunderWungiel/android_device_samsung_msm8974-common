@@ -211,9 +211,9 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service.basic
 
 # VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
-    prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
+PRODUCT_PACKAGES += \
+    libcutils-v29.vendor \
+    libprotobuf-cpp-lite-v29
 
 # Wifi
 PRODUCT_PACKAGES += \
