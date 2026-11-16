@@ -1,0 +1,31 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// msm8974 board file for vendor/qcom/opensource/power
+// (android.hardware.power-service-qti), linked in through
+// BOARD_POWER_CUSTOM_BOARD_LIB. power-8974.c is the lineage-18.1 file that
+// 22.2 dropped, minus the LineagePower profile code (that HAL is gone).
+cc_library_static {
+    name: "libpower_msm8974",
+    vendor: true,
+    srcs: ["power-8974.c"],
+    header_libs: [
+        "libhardware_headers",
+        "qti_powerhal_headers",
+    ],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-variable",
+        "-DINTERACTION_BOOST",
+    ],
+}

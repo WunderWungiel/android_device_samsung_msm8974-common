@@ -21,6 +21,9 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8974
+# qcom_boards.mk (hardware/qcom-caf/common) no longer lists msm8974; the qcom
+# power HAL and the msm8974 display HAL check is-vendor-board-platform,QCOM.
+QCOM_BOARD_PLATFORMS += msm8974
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno330
 
 # Architecture
@@ -94,6 +97,7 @@ TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
+BOARD_POWER_CUSTOM_BOARD_LIB := libpower_msm8974
 
 # Properties
 TARGET_SYSTEM_PROP += device/samsung/msm8974-common/system.prop
