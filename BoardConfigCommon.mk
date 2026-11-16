@@ -39,9 +39,6 @@ BOARD_USES_ALSA_AUDIO := true
 # Audio HAL variant
 TARGET_AUDIOHAL_VARIANT := samsung
 
-# Binder API version
-TARGET_USES_64_BIT_BINDER := true
-
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 
