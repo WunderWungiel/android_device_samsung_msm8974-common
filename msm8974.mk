@@ -25,6 +25,18 @@ DEVICE_PACKAGE_OVERLAYS += \
 # inheriting makefiles; product_config.mk applies this override afterwards.
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
+# ART
+# No userfaultfd on 3.4; without a kernel version the build assumes it exists.
+PRODUCT_ENABLE_UFFD_GC := false
+
+# USB
+# Enable adb from init on debuggable builds instead of waiting for
+# system_server's UsbDeviceManager (needed to debug early boot).
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.sys.usb.config=adb
+endif
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
