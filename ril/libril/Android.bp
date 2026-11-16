@@ -6,13 +6,17 @@
 // Samsung libril (Samsung RIL ABI, see ../include/telephony/ril.h).
 //
 // hardware/ril provides a global Soong "libril" that cannot be disabled, so
-// this one gets its own module name. stem keeps the installed file as
-// /vendor/lib/libril.so, which libsec-ril.so links against (DT_NEEDED).
+// this one gets its own module name and is installed as
+// /vendor/lib/libril_samsung.so. It must not share the stock install path
+// (stem "libril"): Make then merges both install rules' prerequisites and
+// always builds the stock libril, which does not compile against the Samsung
+// ril.h in TARGET_SPECIFIC_HEADER_PATH. The blobs that link libril.so
+// (libsec-ril.so, libril-qcril-hook-oem.so) are patched to need
+// libril_samsung.so instead (blob_fixup in extract-files.sh).
 // build/make/target/product/base_vendor.mk adds the stock libril to every
 // product, so this one overrides it.
 cc_library_shared {
     name: "libril_samsung",
-    stem: "libril",
     overrides: ["libril"],
     vendor: true,
     srcs: [
