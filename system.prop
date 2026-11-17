@@ -18,6 +18,12 @@ ro.opengles.version=196608
 # on the Adreno 330 driver.
 service.sf.prime_shader_cache=0
 
+# RenderEngine: enable Skia's driver correctness workarounds (needs the
+# frameworks/native change that reads this). The Adreno 330 driver is ES3 but
+# only advertises GL_OES_EGL_image_external; Skia supports external textures
+# there only through a workaround (skbug.com/7713).
+ro.renderengine.skia.driver_workarounds=true
+
 # Display
 ro.hdcp2.rx=tz
 ro.qualcomm.cabl=1
