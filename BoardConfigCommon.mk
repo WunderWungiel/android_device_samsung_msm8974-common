@@ -48,8 +48,9 @@ BOARD_HAVE_BLUETOOTH := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8974
 
-# Camera
+# Camera: HALv1 devices (device@1.0) in cameraserver, frameworks/av fork
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+$(call soong_config_set,camera,legacy_hal1,true)
 MALLOC_SVELTE_FOR_LIBC32 := true
 
 # Charger

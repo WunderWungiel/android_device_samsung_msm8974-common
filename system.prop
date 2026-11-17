@@ -6,6 +6,11 @@ av.offload.enable=true
 # Bluetooth
 bluetooth.enable_timeout_ms=12000
 
+# Camera: the HAL is HALv1 only. The frameworks/base fork synthesizes camera2
+# LEGACY characteristics and runs camera2 sessions over HALv1 (LegacyCameraDevice)
+# when this is set; the SystemUI torch tile needs the characteristics too.
+ro.camera.legacy_camera2_shim=true
+
 # fastbootd
 ro.fastbootd.available=true
 
