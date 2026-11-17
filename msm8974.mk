@@ -88,6 +88,12 @@ PRODUCT_PACKAGES += \
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
+# ConfigStore
+# base_vendor.mk installs the HIDL configstore service for shipping API <= 29, but it is not in
+# our VINTF manifest, so it aborts every 5 s. disable_configstore overrides it and installs nothing.
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
