@@ -13,6 +13,11 @@ ro.fastbootd.available=true
 ro.hardware.egl=adreno
 ro.opengles.version=196608
 
+# SurfaceFlinger: Skia Ganesh cannot wrap the external-OES test buffer that
+# shader-cache priming draws (SkImages::BorrowTextureFrom fails, LOG_ALWAYS_FATAL)
+# on the Adreno 330 driver.
+service.sf.prime_shader_cache=0
+
 # Display
 ro.hdcp2.rx=tz
 ro.qualcomm.cabl=1
