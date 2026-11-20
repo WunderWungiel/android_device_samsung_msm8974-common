@@ -177,7 +177,6 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.stagefright.ccodec=0 \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true \
     debug.stagefright.omx_default_rank.sw-audio=1 \
